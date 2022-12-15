@@ -1,0 +1,22 @@
+directories:
+  output: D:\selfData\electron-app\release
+  buildResources: build
+  app: D:\selfData\electron-app\dist
+files:
+  - filter:
+      - '**'
+extends: null
+productName: JC
+appId: com.JC.desktop
+asar: true
+nsis:
+  oneClick: true
+  perMachine: true
+  allowToChangeInstallationDirectory: false
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: JCDesktop
+publish:
+  - provider: generic
+    url: http://localhost:5500/
+electronVersion: 22.0.0
