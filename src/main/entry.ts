@@ -18,8 +18,8 @@ app.whenReady().then(() => {
   } as BrowserWindowConstructorOptions;
   mainWindow = new BrowserWindow(config);
   if (process.argv[2]) {
-    mainWindow.loadURL(process.argv[2]);
     mainWindow.webContents.openDevTools({ mode: "undocked" });
+    mainWindow.loadURL(process.argv[2]);
   } else {
     CustomScheme.registerScheme();
     mainWindow.loadURL(`app://index.html`);
