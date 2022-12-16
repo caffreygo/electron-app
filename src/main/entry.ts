@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow, BrowserWindowConstructorOptions } from "electron";
 import { CustomScheme } from "./CustomScheme";
 
 process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = "true";
@@ -15,7 +15,7 @@ app.whenReady().then(() => {
       spellcheck: false,
       disableHtmlFullscreenWindowResize: true,
     },
-  };
+  } as BrowserWindowConstructorOptions;
   mainWindow = new BrowserWindow(config);
   if (process.argv[2]) {
     mainWindow.loadURL(process.argv[2]);
